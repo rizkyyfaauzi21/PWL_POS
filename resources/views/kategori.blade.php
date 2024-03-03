@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Level Pengguna</title>
+    <title>Data Kategori Barang</title>
 </head>
 <body>
-    <h1>Data Level Pengguna</h1>
+    <h1>Data Kategori Barang</h1>
     <table border="1" cellpadding="2" cellspacing="0">
         <tr>
             <th>ID</th>
-            <th>Kode Level</th>
-            <th>Nama Level</th>
+            <th>Kode Kategori</th>
+            <th>Nama Kategori</th>
         </tr>
         @foreach ($data as $d)
         <tr>
-            <td>{{ $d->level_id }}</td>
-            <td>{{ $d->level_kode }}</td>
-            <td>{{ $d->level_nama }}</td>
+            <td>{{ $d->kategori_id }}</td>
+            <td>{{ $d->kategori_kode }}</td>
+            <td>{{ $d->kategori_nama }}</td>
         </tr>
         @endforeach
-    </table>        
+    </table>
 </body>
 </html>
