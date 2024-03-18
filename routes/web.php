@@ -33,6 +33,7 @@ Route::get('/user/hapus/{id}', [UserController::class, 'hapus'])->name('/user/ha
 
 Route::get('/kategori', [KategoriController::class, 'index']);
 
+// Tugas nomer 1 js 5
 Route::get('/kategori/create', [KategoriController::class, 'create'])->name('/kategori/create');
 Route::post('/kategori', [KategoriController::class, 'store']);
 

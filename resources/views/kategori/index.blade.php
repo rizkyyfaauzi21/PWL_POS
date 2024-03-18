@@ -1,3 +1,4 @@
+{{-- Tugas nomer 1 js 5 --}}
 @extends('layout.app')
 
 {{-- Customize layout sections --}}
