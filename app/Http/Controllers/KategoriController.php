@@ -28,8 +28,8 @@ class KategoriController extends Controller
         //     'kategori_nama' => $request->namaKategori,
         // ]);
         $validated = $request->validate([
-            'kategori_kode' => '$required',
-            'kategori_nama' => '$required',
+            'kategori_kode' => 'required',
+            'kategori_nama' => 'required',
         ]);
         return redirect('/kategori');
     }

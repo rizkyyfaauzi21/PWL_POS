@@ -49,7 +49,9 @@ Route::get('/kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('
 Route::get('/user', [UserController::class, 'index'])->name('/user');
 Route::get('/user/create', [UserController::class, 'create'])->name('/user/create');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('/user/edit');
+Route::post('/user', [UserController::class, 'store']);
 
 Route::get('/level', [LevelController::class, 'index'])->name('/level');
 Route::get('/level/create', [LevelController::class, 'create'])->name('/level/create');
 Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
+Route::post('/level', [LevelController::class, 'store']);

@@ -195,10 +195,15 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
-        UserModel::create([
-            'user_username' => $request->username,
-            'user_nama' => $request->namaUser,
-            'user_levelId' => $request->level_id,
+        // UserModel::create([
+        //     'user_username' => $request->username,
+        //     'user_nama' => $request->namaUser,
+        //     'user_levelId' => $request->level_id,
+        // ]);
+        $validated = $request->validate([
+            'user_username' => 'required',
+            'user_nama' => 'required',
+            'user_levelId' => 'required',
         ]);
         return redirect('/user');
     }
