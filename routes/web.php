@@ -4,6 +4,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Monolog\Level;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +25,12 @@ Route::get('/level', [LevelController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
 
-Route::get('/user', [UserController::class, 'index'])->name('/user');
-Route::get('/user/tambah', [UserController::class, 'tambah'])->name('/user/tambah');
-Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan'])->name('/user/tambah_simpan');
-Route::get('/user/ubah/{id}', [UserController::class, 'ubah'])->name('/user/ubah');
-Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan'])->name('/user/ubah_simpan');
-Route::get('/user/hapus/{id}', [UserController::class, 'hapus'])->name('/user/hapus');
+// Route::get('/user', [UserController::class, 'index'])->name('/user');
+// Route::get('/user/tambah', [UserController::class, 'tambah'])->name('/user/tambah');
+// Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan'])->name('/user/tambah_simpan');
+// Route::get('/user/ubah/{id}', [UserController::class, 'ubah'])->name('/user/ubah');
+// Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan'])->name('/user/ubah_simpan');
+// Route::get('/user/hapus/{id}', [UserController::class, 'hapus'])->name('/user/hapus');
 
 Route::get('/kategori', [KategoriController::class, 'index']);
 
@@ -44,3 +45,11 @@ Route::put('/kategori/edit_simpan/{id}', [KategoriController::class, 'edit_simpa
 
 // Tugas nomer 4 js 5
 Route::get('/kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('/kategori/hapus');
+
+Route::get('/user', [UserController::class, 'index'])->name('/user');
+Route::get('/user/create', [UserController::class, 'create'])->name('/user/create');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('/user/edit');
+
+Route::get('/level', [LevelController::class, 'index'])->name('/level');
+Route::get('/level/create', [LevelController::class, 'create'])->name('/level/create');
+Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');

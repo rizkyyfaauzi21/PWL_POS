@@ -335,8 +335,20 @@ return [
         ],
         [
             // Tugas Praktikum nomer 2 jobsheet 5
-            'text' => 'Manage_Kategori',
+            'text' => 'Manage Kategori',
             'url' => 'kategori',
+            'icon' => 'fas fa-fw fa-bars',
+        ],
+        [
+            // Tugas Praktikum nomer 2 jobsheet 5
+            'text' => 'Manage User',
+            'url' => 'user',
+            'icon' => 'fas fa-fw fa-bars',
+        ],
+        [
+            // Tugas Praktikum nomer 2 jobsheet 5
+            'text' => 'Manage Level',
+            'url' => 'level',
             'icon' => 'fas fa-fw fa-bars',
         ],
         [
