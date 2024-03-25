@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Level;
@@ -55,3 +56,5 @@ Route::get('/level', [LevelController::class, 'index'])->name('/level');
 Route::get('/level/create', [LevelController::class, 'create'])->name('/level/create');
 Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
 Route::post('/level', [LevelController::class, 'store']);
+
+Route::resource('m_user', POSController::class);

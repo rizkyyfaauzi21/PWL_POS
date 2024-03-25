@@ -9,9 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // Praktikum D
     public function up(): void
     {
-        Schema::create('m_user', function (Blueprint $table) {
+        Schema::create('useri', function (Blueprint $table) {
             $table->id('user_id');
             $table->unsignedBigInteger('level_id')->index(); // indexing untuk Foreignkey
             $table->string('username', 20)->unique(); // unique untuk memastikan tidak ada username yang sama
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('m_user');
+        Schema::dropIfExists('useri');
     }
 };
