@@ -343,7 +343,7 @@ return [
             // Tugas Praktikum nomer 2 jobsheet 5
             'text' => 'Manage User',
             'url' => 'user',
-            'icon' => 'fas fa-fw fa-bars',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
             // Tugas Praktikum nomer 2 jobsheet 5

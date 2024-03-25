@@ -22,7 +22,7 @@
                             class="@error('kategori_kode') is-invalid @enderror">
 
                         @error('kategori_kode')
-                            <div class "alert alert-danger">{{ $message }}</div>
+                            <div class = "alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                             class="@error('kategori_nama') is-invalid @enderror">
 
                         @error('kategori_kode')
-                            <div class "alert alert-danger">{{ $message }}</div>
+                            <div class = "alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
