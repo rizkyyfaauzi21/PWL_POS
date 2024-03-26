@@ -352,6 +352,12 @@ return [
             'icon' => 'fas fa-fw fa-bars',
         ],
         [
+            // Tugas Praktikum nomer 2 jobsheet 5
+            'text' => 'M_User',
+            'url' => 'm_user',
+            'icon' => 'fas fa-fw fa-address-card',
+        ],
+        [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [

@@ -35,7 +35,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>nama:</strong>
+                <strong>Nama:</strong>
                 <input type="text" name="nama" class="form-control" placeholder="Masukkan nama">
             </div>
         </div>
@@ -43,6 +43,16 @@
             <div class="form-group">
                 <strong>Password:</strong>
                 <input type="password" name="password" class="form-control" placeholder="Masukkan password">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Level:</strong>
+                <select name="form-control" id="level_id">
+                    @foreach ($level as $lv)
+                        <option value="{{$lv->level_id}}">{{$lv->level_nama}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
