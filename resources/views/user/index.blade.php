@@ -5,7 +5,7 @@
     <div class="card-header">
         <h3 class="card-title">{{ $page->title }}</h3>
         <div class="card-tools">
-            <a href="{{ url('user/create') }}" class="btn btn-sm btn-primary -mt-1">Tambah</a>
+            <a href="{{ url('user/create') }}" class="btn btn-sm btn-primary mt-1">Tambah</a>
         </div>
     </div>
     <div class="card-body">

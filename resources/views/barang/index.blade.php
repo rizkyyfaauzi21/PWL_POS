@@ -4,7 +4,7 @@
     <div class="card-header">
         <h3 class="card-title">{{ $page->title }}</h3>
         <div class="card-tools">
-            <a href="{{ url('kategori/create') }}" class="btn btn-sm btn-primary mt-1">Tambah</a>
+            <a href="{{ url('barang/create') }}" class="btn btn-sm btn-primary mt-1">Tambah</a>
         </div>
     </div>
     <div class="card-body">
@@ -25,17 +25,20 @@
                                 <option value="{{ $item->kategori_id }}">{{ $item->kategori_nama }}</option>
                             @endforeach
                         </select>
-                        <small class="form-text text-muted">Kategori</small>
+                        <small class="form-text text-muted">Data Kategori Barang</small>
                     </div>
                 </div>
             </div>
         </div>        
-        <table class="table table-bordered table-striped table-hover table-sm" id="table_kategori">
+        <table class="table table-bordered table-striped table-hover table-sm" id="table_barang">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Kode</th>
                     <th>Nama</th>
+                    <th>Kategori</th>
+                    <th>Harga Beli</th>
+                    <th>Harga Jual</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -51,11 +54,11 @@
 @push('js')
 <script>
     $(document).ready(function() {
-        var dataKategori = $('#table_kategori').DataTable({
+        var dataBarang = $('#table_barang').DataTable({
             processing: true,
             serverSide : true,
             ajax: {
-                "url": "{{ url('kategori/list') }}",
+                "url": "{{ url('barang/list') }}",
                 "dataType": "json",
                 "type": "POST",
                 "data": function (d) {
@@ -70,13 +73,31 @@
                     searchable: false
                 },
                 {
-                    data: "kategori_kode",
+                    data: "barang_kode",
                     className: "",
                     orderable: true,
                     searchable: true
                 },
                 {
-                    data: "kategori_nama",
+                    data: "barang_nama",
+                    className: "",
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: "kategori.kategori_nama",
+                    className: "",
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    data: "harga_beli",
+                    className: "",
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: "harga_jual",
                     className: "",
                     orderable: true,
                     searchable: true
@@ -90,33 +111,8 @@
             ]
         });
         $('#kategori_id').on('change', function() {
-            dataKategori.ajax.reload();
+            dataBarang.ajax.reload();
         });
     });
 </script>
 @endpush
-
-{{-- Tugas nomer 1 js 5 --}}
-{{-- @extends('layout.app') --}}
-
-{{-- Customize layout sections --}}
-
-{{-- @section('subtitle', 'Kategori')
-@section('content_header_title', 'Home')
-@section('content_header_subtitle', 'Kategori')
-
-@section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">Manage Kategori</div>
-            <div class="card-body">
-                <a href="{{route('/kategori/create')}}" class="btn btn-primary mb-3">Add Kategori</a>
-                {{ $dataTable->table() }}
-            </div>
-        </div>
-    </div>
-@endsection
-
-@push('scripts')
-    {{ $dataTable->scripts() }}
-@endpush --}}

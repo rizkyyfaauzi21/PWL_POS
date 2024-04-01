@@ -1,13 +1,13 @@
 <div class="sidebar">
   <!-- Sidebar user (optional) -->
-  {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
       <img src="{{ asset('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
     </div>
     <div class="info">
-      <a href="#" class="d-block">Alexander Pierce</a>
+      <a href="#" class="d-block">Muhammad Rizky Fauzi</a>
     </div>
-  </div> --}}
+  </div>
 
   <!-- SidebarSearch Form -->
   <div class="form-inline mt-2">
@@ -65,7 +65,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'penjualan')? 'active' : ''}}">
+          <a href="{{ url('/transaksi') }}" class="nav-link {{ ($activeMenu == 'transaksi')? 'active' : ''}}">
             <i class="nav-icon fas fa-cash-register"></i>
             <p>Transaksi Penjualan</p>
           </a>

@@ -220,7 +220,7 @@ class UserController extends Controller
         $activeMenu = 'user';
         return view('user.create', ['level' => $level, 'breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu]);
     }
-    public function store(StorePostRequestUser $request): RedirectResponse
+    public function store(Request $request)
     {
         // UserModel::create([
         //     'user_username' => $request->username,
