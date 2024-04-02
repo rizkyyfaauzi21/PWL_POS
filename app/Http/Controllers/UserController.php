@@ -30,6 +30,7 @@ class UserController extends Controller
 
         $activeMenu = 'user';
         $level = LevelModel::all();
+
         return view('user.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level, 'activeMenu' => $activeMenu]);
 
         // return $dataTable->render('user.index');

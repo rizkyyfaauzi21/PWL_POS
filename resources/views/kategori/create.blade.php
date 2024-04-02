@@ -12,7 +12,7 @@
             <div class="form-group row">
                 <label class="col-1 control-label col-form-label">Kode</label>
                 <div class="col-11">
-                    <input type="text" class="form-control" id="kategori_kode" nama="kategori_kode" value="{{ old('kategori_kode') }}" required>
+                    <input type="text" class="form-control" id="kategori_kode" name="kategori_kode" value="{{ old('kategori_kode') }}" required>
                     @error('kategori_kode')
                     <small class="form-text text-danger">{{ $message }}</small>
                     @enderror

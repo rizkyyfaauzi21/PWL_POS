@@ -48,16 +48,21 @@ class StokController extends Controller
         return view('stok.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'stok' => $stok, 'activeMenu' => $activeMenu]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $breadcrumb = (object) [
             'title' => 'Tambah Stok',
+
             'list' => ['Home', 'Barang', 'Tambah']
         ];
 
         $page = (object) [
             'title' => 'Tambah stok baru'
         ];
+
+        // if ($request->barang_nama) {
+        //     $stoks->where('barang_nama', $request->nama);
+        // }
 
         $barang = BarangModel::all();
         $user = UserModel::all();
@@ -110,11 +115,11 @@ class StokController extends Controller
         $request->validate([
             'barang_id' => 'required|integer',
             'user_id' => 'required|integer',
-            'stok_tanggal' => 'required|datetime',
+            'stok_tanggal' => 'required|date',
             'stok_jumlah' => 'required|integer',
         ]);
 
-        BarangModel::find($id)->update([
+        StokModel::find($id)->update([
             'barang_id' => $request->barang_id,
             'user_id' => $request->user_id,
             'stok_tanggal' => $request->stok_tanggal,

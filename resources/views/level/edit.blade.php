@@ -20,7 +20,7 @@
                 <div class="form-group row">
                     <label class="col-1 control-label col-form-label">Kode</label>
                     <div class="col-11">
-                        <input type="text" class="form-control" id="level_kode" nama="level_kode" value="{{ old('level_kode', $level->level_kode )}}" required>
+                        <input type="text" class="form-control" id="level_kode" name="level_kode" value="{{ old('level_kode', $level->level_kode )}}" required>
                         @error('level_kode')
                             <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
@@ -39,7 +39,7 @@
                     <label class="col-1 control-label col-form-label"></label>
                     <div class="col-11">
                         <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-                        <a class="btn btn-sm btn-default ml-1" href="{{ url('user') }}">Kembali</a>
+                        <a class="btn btn-sm btn-default ml-1" href="{{ url('level') }}">Kembali</a>
                     </div>
                 </div>
             </form>

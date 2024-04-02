@@ -111,14 +111,13 @@ class KategoriController extends Controller
     public function update(Request $request, String $id)
     {
         $request->validate([
-            'kategori_kode' => 'required|string|min:3|unique:m_level,level_kode, ' . $id . ',kategori_id',
+            'kategori_kode' => 'required|string|min:3|unique:m_kategori,kategori_kode, ' . $id . ',kategori_id',
             'kategori_nama' => 'required|string|max:100'
         ]);
 
-        $kategori = KategoriModel::find($id);
-        $kategori->update([
+        KategoriModel::find($id)->update([
             'kategori_kode' => $request->kategori_kode,
-            'kategori_nama' => $request->kategori_nama,
+            'kategori_nama' => $request->kategori_nama
         ]);
 
         return redirect('/kategori')->with('success', 'Data kategori barang berhasil diubah');

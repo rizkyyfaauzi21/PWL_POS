@@ -96,15 +96,15 @@ class LevelController extends Controller
         ]);
 
         LevelModel::create([
-            'level_kode' => $request->username,
-            'level_nama' => $request->nama
+            'level_kode' => $request->level_kode,
+            'level_nama' => $request->level_nama
         ]);
 
         return redirect('/level')->with('success', 'Data level berhasil disimpan');
     }
     public function show(String $id)
     {
-        $user = LevelModel::with('level')->find($id);
+        $level = LevelModel::find($id);
 
         $breadcrumb = (object) [
             'title' => 'Detail Level',
@@ -117,7 +117,7 @@ class LevelController extends Controller
 
         $activeMenu = 'level'; // set menu yang sedang aktif
         // $level = LevelModel::all();
-        return view('level.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'user' => $user, 'activeMenu' => $activeMenu]);
+        return view('level.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level, 'activeMenu' => $activeMenu]);
     }
     public function update(Request $request, String $id)
     {
@@ -126,10 +126,9 @@ class LevelController extends Controller
             'level_nama' => 'required|string|max:100'
         ]);
 
-        $level = LevelModel::find($id);
-        $level->update([
+        LevelModel::find($id)->update([
             'level_kode' => $request->level_kode,
-            'level_nama' => $request->level_nama,
+            'level_nama' => $request->level_nama
         ]);
 
         return redirect('/level')->with('success', 'Data user berhasil diubah');
@@ -150,7 +149,7 @@ class LevelController extends Controller
 
         $activeMenu = 'level'; // set menu yang sedang aktif
 
-        return view('user.edit', [
+        return view('level.edit', [
             'breadcrumb' => $breadcrumb,
             'page' => $page,
             'level' => $level,

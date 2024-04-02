@@ -19,7 +19,7 @@
             <div class="form-group row">
                 <label class="col-1 control-label col-form-label">Barang</label>
                 <div class="col-11">
-                    <select class="form-control" id="kategori_id" name="kategori_id" required>
+                    <select class="form-control" id="barang_id" name="barang_id" required>
                         <option value="">- Pilih Barang -</option>
                         @foreach($barang as $item)
                         <option value="{{ $item->barang_id }}" @if($item->barang_id == $stok->barang_id) selected @endif>{{ $item->barang_nama }}</option>
@@ -33,7 +33,7 @@
             <div class="form-group row">
                 <label class="col-1 control-label col-form-label">User</label>
                 <div class="col-11">
-                    <select class="form-control" id="kategori_id" name="kategori_id" required>
+                    <select class="form-control" id="user_id" name="user_id" required>
                         <option value="">- Pilih User -</option>
                         @foreach($user as $item)
                         <option value="{{ $item->user_id }}" @if($item->user_id == $stok->user_id) selected @endif>{{ $item->nama }}</option>

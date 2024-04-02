@@ -124,7 +124,7 @@ class TransaksiController extends Controller
         $request->validate([
             'user_id' => 'required|integer',
             'pembeli' => 'required|string|max:50',
-            'penjualan_kode' => 'required|string|max:20',
+            'penjualan_kode' => 'required|string|unique:t_penjualan,penjualan_kode',
             'penjualan_tanggal' => 'required|date'
         ]);
 
